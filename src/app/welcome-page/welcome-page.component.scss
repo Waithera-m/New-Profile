@@ -1,32 +1,37 @@
+.page-title {
+    h1 {
+        font-size: calc(0.5rem + 1vw);
+        display: grid;
+        grid-template-columns: 1fr auto 1fr;
+        gap: 1em;
+    }
+
+    h1::before,
+    h1::after {
+        content: "";
+        border-top: 0.1em double black;
+        align-self: center;
+    }
+}
+
 .title-row {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
     gap: 2em;
     padding-inline: 1em;
 
     .first-column {
         display: flex;
         flex-direction: column;
-        flex: 1;
-        h1, p {
+        flex: 2;
+
+        h1,
+        p {
             font-weight: 500;
-            text-align: start;
-            width: max-content;
-        }
-
-        h1 {
-            position: relative;
-        }
-
-        h1:before {
-            content: "";
-            position: absolute;
-            border: 1px solid rgb(190, 186, 186);
-            width: 100%;
-            top: 2em;
+            
         }
     }
 
@@ -34,34 +39,45 @@
         display: flex;
         flex-direction: column;
         flex: 1;
-        h1, p {
+
+        h1,
+        p {
             font-weight: 500;
-            text-align: end;
+            text-align: center;
         }
     }
 
     .third-column {
-        // display: flex;
-        // flex-direction: column;
-        flex: 1; 
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        justify-content: end;
 
-        h1, p {
+        h1,
+        p {
             font-weight: 500;
-            text-align: end;
+            // text-align: end;
         }
 
         .contact-row {
-            display: flex;
-            flex-direction: row;
-            flex-wrap: wrap;
-            justify-content: space-between;
+            // display: flex;
+            // gap: 0.3em;
 
+            .labels {
+                text-align: start;
+                margin-inline-end: 1em;
+            }
+
+            .values {
+                text-align: end;
+            }
         }
     }
 }
 
 
-h2, h3 {
+h2,
+h3 {
     font-weight: 500;
     text-align: start;
 }
@@ -69,6 +85,16 @@ h2, h3 {
 
 h1 {
     font-size: calc(0.5rem + 1vw);
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 0.5em;
+}
+
+h1::before,
+h1::after {
+    content: "";
+    border-top: 1px solid black;
+    align-self: center;
 }
 
 h2 {
@@ -76,7 +102,8 @@ h2 {
     line-height: 0.5;
 }
 
-p, h3 {
+p,
+h3 {
     font-size: calc(0.5rem + 0.5vw);
     width: 50ch;
     opacity: 0.8;
